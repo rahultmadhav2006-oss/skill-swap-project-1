@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trade a skill you know for one you want to learn.">
+  <title>SkillSwap — Learn together</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="logo" href="#home">skill<span>swap</span></a>
+
+    <button
+      class="menu-button"
+      id="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      aria-label="Open menu">
+      ☰
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="#browse">Explore skills</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#share">Share a skill</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">GOOD THINGS ARE BETTER SHARED</p>
+
+        <h1>
+          Your next skill is<br>
+          <span>closer than you think.</span>
+        </h1>
+
+        <p class="intro">
+          Trade what you know for what you want to learn.
+          Find your people, share your skills, and grow together.
+        </p>
+
+        <a class="button button-dark" href="#browse">
+          Find your skill match ↓
+        </a>
+      </div>
+
+      <div class="hero-art" aria-label="People exchanging creative skills">
+        <div class="hero-spark" aria-hidden="true">✦</div>
+        <div class="hero-note">little skills.<br><strong>big possibilities.</strong></div>
+        <div class="hero-people" aria-hidden="true">🎨 <span>⇄</span> 🎸</div>
+        <div class="hero-plant" aria-hidden="true">🪴</div>
+      </div>
+    </section>
+
+    <section class="values" aria-label="SkillSwap values">
+      <span>NO FEES, JUST FAIR TRADES</span>
+      <span class="separator" aria-hidden="true">✳</span>
+      <span>LEARN AT YOUR OWN PACE</span>
+      <span class="separator" aria-hidden="true">✳</span>
+      <span>GOOD PEOPLE, GOOD ENERGY</span>
+    </section>
+
+    <section class="section browse" id="browse">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A SKILL FOR A SKILL</p>
+          <h2>Find your kind of <span>people.</span></h2>
+        </div>
+        <p>Everyone has something to teach. Start with what you’re curious about.</p>
+      </div>
+
+      <div class="controls">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="visually-hidden">Search skills or people</span>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search a skill or a name">
+        </label>
+
+        <div class="filters" role="group" aria-label="Filter by category">
+          <button class="filter active" type="button"
+            data-category="All" aria-pressed="true">All skills</button>
+          <button class="filter" type="button"
+            data-category="Creative" aria-pressed="false">Creative</button>
+          <button class="filter" type="button"
+            data-category="Tech" aria-pressed="false">Tech</button>
+          <button class="filter" type="button"
+            data-category="Lifestyle" aria-pressed="false">Lifestyle</button>
+        </div>
+      </div>
+
+      <div class="results-row">
+        <p><strong id="result-count">0</strong> people ready to swap</p>
+        <label class="online-filter">
+          <input id="online-only" type="checkbox">
+          Online only
+        </label>
+      </div>
+
+      <div class="people-grid" id="people-grid" aria-live="polite"></div>
+
+      <p class="empty-message" id="empty-message" hidden>
+        No matches found. Try another search or category.
+      </p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="how-copy">
+        <p class="eyebrow">EASY AS ONE, TWO, SWAP</p>
+        <h2>A better way<br>to <span>figure it out.</span></h2>
+        <p>Learning feels lighter when you do it together.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="step-number">01</span>
+          <div>
+            <h3>Bring your something</h3>
+            <p>A skill you’ve practised, a hobby you love, or something friends ask you about.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">02</span>
+          <div>
+            <h3>Find your someone</h3>
+            <p>Meet someone whose “I can teach” matches your “I’d love to learn.”</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">03</span>
+          <div>
+            <h3>Make a little magic</h3>
+            <p>Plan a first session, show up curious, and learn together.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section share" id="share">
+      <p class="eyebrow">EVERYONE HAS A SOMETHING</p>
+      <h2>You know more than you <span>think.</span></h2>
+      <p>
+        That recipe you perfected. The guitar chords you learned.
+        Someone would love to learn it from you.
+      </p>
+
+      <form class="share-form" id="share-form">
+        <label>
+          Your name
+          <input name="name" required placeholder="e.g. Alex">
+        </label>
+
+        <label>
+          I can teach
+          <input name="teach" required placeholder="e.g. Watercolor painting">
+        </label>
+
+        <label>
+          I want to learn
+          <input name="learn" required placeholder="e.g. Basic guitar">
+        </label>
+
+        <label>
+          Category
+          <select name="category">
+            <option>Creative</option>
+            <option>Tech</option>
+            <option>Lifestyle</option>
+          </select>
+        </label>
+
+        <label class="online-check">
+          <input name="online" type="checkbox" checked>
+          I can meet online
+        </label>
+
+        <button class="button button-dark" type="submit">Add my skill ↗</button>
+      </form>
+
+      <p id="share-message" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#home">skill<span>swap</span></a>
+    <p>A little more curious. A little more connected.</p>
+  </footer>
+
+  <dialog class="connect-dialog" id="connect-dialog">
+    <button
+      class="dialog-close"
+      id="close-dialog"
+      type="button"
+      aria-label="Close dialog">×</button>
+
+    <p class="eyebrow">YOUR NEXT GOOD THING</p>
+    <h2>Say hello to <span id="match-name">your match</span>.</h2>
+    <p id="match-skills"></p>
+
+    <form id="connect-form">
+      <label>
+        Your name
+        <input name="name" required placeholder="e.g. Alex">
+      </label>
+
+      <label>
+        A quick hello
+        <textarea
+          name="message"
+          required
+          rows="3"
+          placeholder="What would you like to learn or share?"></textarea>
+      </label>
+
+      <button class="button button-dark" type="submit">Send interest ↗</button>
+    </form>
+
+    <p id="connect-message" role="status"></p>
+  </dialog>
+</body>
+</html>
